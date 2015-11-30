@@ -1,5 +1,10 @@
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -48,7 +53,7 @@ public class HttpCount extends AbstractHandler {
 			metrics.put(key, 1);
 		}
 		JSONObject json = new JSONObject(metrics);
-		
+		DatabaseConnection.insertData("i-773b21b1","HTTP",1);
 		response.setContentType("text/html;charset=utf-8");
 		response.setStatus(HttpServletResponse.SC_OK);
 		baseRequest.setHandled(true);

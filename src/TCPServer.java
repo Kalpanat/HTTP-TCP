@@ -44,6 +44,7 @@ class TCPServer {
 					// System.out.println("Received: " + clientSentence);
 					capitalizedSentence = clientSentence.toUpperCase() + '\n';
 					outToClient.writeBytes(capitalizedSentence);
+					DatabaseConnection.insertData("i-773b21b1","TCP",1);
 				} catch (Exception e) {
 					System.err.println("Exception in while loop: ");
 					e.printStackTrace();
