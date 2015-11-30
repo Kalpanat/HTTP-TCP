@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cwd=$(pwd)
+
+for i in $cwd/lib/*jar; do CLASSPATH=$CLASSPATH:$i; done;
+
+nohup /usr/bin/java -cp $CLASSPATH HttpCount &
